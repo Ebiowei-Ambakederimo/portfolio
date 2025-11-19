@@ -1,0 +1,281 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Amiamie";
+  src: url("/fonts/otf/Amiamie-Regular.otf") format("opentype"),
+    url("/fonts/ttf/Amiamie-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Amiamie";
+  src: url("/fonts/otf/Amiamie-Italic.otf") format("opentype"),
+    url("/fonts/ttf/Amiamie-Italic.ttf") format("truetype");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Amiamie";
+  src: url("/fonts/otf/Amiamie-Light.otf") format("opentype"),
+    url("/fonts/ttf/Amiamie-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Amiamie";
+  src: url("/fonts/otf/Amiamie-LightItalic.otf") format("opentype"),
+    url("/fonts/ttf/Amiamie-LightItalic.ttf") format("truetype");
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Amiamie";
+  src: url("/fonts/otf/Amiamie-Black.otf") format("opentype"),
+    url("/fonts/ttf/Amiamie-Black.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Amiamie";
+  src: url("/fonts/otf/Amiamie-BlackItalic.otf") format("opentype"),
+    url("/fonts/ttf/Amiamie-BlackItalic.ttf") format("truetype");
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Amiamie-Round";
+  src: url("/fonts/otf/Amiamie-RegularRound.otf") format("opentype"),
+    url("/fonts/ttf/Amiamie-RegularRound.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Amiamie-Round";
+  src: url("/fonts/otf/Amiamie-BlackRound.otf") format("opentype"),
+    url("/fonts/ttf/Amiamie-BlackRound.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Amiamie-Round";
+  src: url("/fonts/otf/Amiamie-BlackItalicRound.otf") format("opentype"),
+    url("/fonts/ttf/Amiamie-BlackItalicRound.ttf") format("truetype");
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+@layer utilities {
+  .clip-path {
+    clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
+  }
+
+ /* .banner-text-responsive {
+  @apply text-[68px] sm:text-[118px] md:text-[126px] lg:text-[152px] leading-[3rem] sm:leading-[4.5rem] lg:leading-[5rem];
+} */
+ .banner-text-responsive {
+  @apply text-[68px] sm:text-[118px] md:text-[126px] lg:text-[152px]
+         leading-[5rem] sm:leading-[7rem] lg:leading-[9.5rem];
+}
+
+
+
+  .value-text-responsive {
+    @apply text-2xl md:text-[26px] lg:text-[32px];
+  }
+
+  .marquee-text-responsive {
+    @apply text-[28px] sm:text-[36px] lg:text-[42px];
+  }
+
+  .contact-text-responsive {
+    @apply text-[42px] sm:text-[52px] md:text-[62px] lg:text-[100px];
+  }
+}
+
+:root {
+  --color-primary: #ffffff;
+  --color-DarkLava: #393632;
+  --color-SageGray: #8b8b73;
+  --color-gold: #cfa355;
+  --font-amiamie: "Amiamie", sans-serif;
+  --font-amiamie-round: "Amiamie-Round", sans-serif;
+
+  --animate-marquee: marquee 40s infinite linear;
+  --page-padding: 1.5rem;
+  --color-text: #fff;
+  --color-bg: #12100e;
+  --color-link: rgba(255, 255, 255, 0.6);
+  --color-link-hover: #fff;
+  --color-bg-1: #2f251e;
+  --color-bg-2: #43392f;
+  --color-bg-3: var(--color-bg-1);
+  --color-bg-4: var(--color-bg-2);
+  --color-bg-5: var(--color-bg-1);
+  --color-bg-6: var(--color-bg-2);
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-100% - var(--gap)));
+  }
+}
+
+body {
+  background: #ffffff;
+  color: black;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  font-family: var(--font-amiamie);
+  color: rgb(var(--foreground-rgb));
+  font-family: "Manrope", sans-serif;
+
+}
+
+
+
+/* Custom utility classes */
+.text-meta {
+  @apply text-gray-400;
+}
+
+/* Content styles */
+.content {
+  padding: var(--page-padding);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.content--sticky {
+  width: 100vw;
+  position: sticky;
+  top: 0;
+  --offset: 0px;
+  top: var(--offset);
+  height: calc(100vh - var(--offset));
+}
+
+.content--grid {
+  display: grid;
+  overflow: hidden;
+  grid-column-gap: 5vw;
+  grid-row-gap: 2vh;
+  align-content: center;
+  grid-template-areas: 
+    'content-img' 
+    'content-title' 
+    'content-text';
+  justify-items: center;
+}
+
+.contentimg {
+  grid-area: content-img;
+  width: 50%;
+  max-width: 300px;
+  height: auto;
+}
+
+.contentimg--large {
+  width: 60%;
+  height: auto;
+}
+
+.contentimg--left {
+  justify-self: end;
+}
+
+.contenttitle {
+  grid-area: content-title;
+  letter-spacing: -0.095em;
+  text-transform: uppercase;
+  line-height: 1;
+  font-weight: normal;
+  font-size: clamp(2rem, 6vw, 5rem);
+  margin: 0;
+  font-variation-settings: "slnt" 0, "wdth" 400, "wght" 900, "INKT" 400;
+}
+
+.contenttitle i {
+  font-style: normal;
+  font-variation-settings: "slnt" 0, "wdth" 100, "wght" 400, "INKT" 400;
+}
+
+.contenttext {
+  margin: 0;
+  max-width: 500px;
+  grid-area: content-text;
+  text-align: center;
+  line-height: 1.5;
+  padding: 0 1rem;
+  backface-visibility: hidden;
+}
+
+.contenttext--left {
+  text-align: left;
+  align-self: start;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+h4 {
+  font-size: 7rem;
+  font-weight: 800;
+  letter-spacing: -0.35rem;
+  line-height: 1.1;
+}
+
+/* p {
+  font-size: 1.125rem;
+  font-weight: 500;
+} */
+
+@media ( max-width: 1000px ){
+  h4 {
+    font-size: 2rem;
+    letter-spacing: 0;
+  }
+}
+
+p {
+  font-size: 1rem;
+  
+}

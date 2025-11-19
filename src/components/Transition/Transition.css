@@ -1,0 +1,47 @@
+.transition-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100svh;
+  display: flex;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.block {
+  flex: 1;
+  height: 100%;
+  background-color: #222;
+  transform: scaleX(0);
+  transform-origin: left;
+}
+
+.logo-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width:100vw;
+  height: 100svh;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #222;
+  pointer-events: none;
+  opacity: 0;
+}
+
+.logo-container {
+    width: 200px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+@media (max-width: 1000px) {
+    h1 {
+        font-size: 3rem;
+    }
+}

@@ -39,7 +39,7 @@ importers:
         specifier: ^0.10.8
         version: 0.10.8(@types/three@0.179.0)(three@0.177.0)
       next:
-        specifier: 15.5.2
+        specifier: ^15.5.2
         version: 15.5.2(react-dom@19.1.1(react@19.1.1))(react@19.1.1)(sass@1.91.0)
       react:
         specifier: 19.1.1

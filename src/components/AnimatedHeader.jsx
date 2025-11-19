@@ -2,7 +2,7 @@
 
 import React from "react";
 import { useRef } from "react";
-// import { AnimatedTextLines } from "@/components/AnimatedTextLines";
+import { AnimatedTextLines } from "@/components/AnimatedTextLines";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 
@@ -10,7 +10,7 @@ import gsap from "gsap";
 const AnimatedHeader = ({
   subTitle,
   title,
-//   text,
+  text,
   textColor,
   withScrollTrigger = false,
 }) => {
@@ -89,7 +89,11 @@ const AnimatedHeader = ({
       <div className={`relative px-10 ${textColor}`}>
         <div className="absolute inset-x-0 " />
         <div className="py-12 sm:py-16 text-end">
-          
+        <AnimatedTextLines
+            text={text}
+            className={`font-light value-text-responsive ${textColor}`}
+            // className={`font-light uppercase value-text-responsive ${textColor}`}
+          />
         </div>
       </div>
     </div>

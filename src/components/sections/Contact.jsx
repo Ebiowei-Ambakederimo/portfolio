@@ -33,6 +33,11 @@ const Contact = () => {
     <section
       id="contact"
       className="flex flex-col justify-between min-h-screen bg-black"
+      style={{ 
+        minHeight: '100dvh',
+        paddingBottom: 'env(safe-area-inset-bottom, 0px)',
+        marginBottom: '-1px'
+      }}
     >
       <div>
         <AnimatedHeaderSection
@@ -78,6 +83,7 @@ const Contact = () => {
           </div>
         </div>
       </div>
+      <div className="h-20 bg-black"></div>
       {/* <Marquee items={items} className="text-white bg-transparent" /> */}
     </section>
   );

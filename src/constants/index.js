@@ -4,8 +4,8 @@ export const navItems = [
     { name: "services", href: "/#services" },
     { name: "about", href: "/about" },
     { name: "work", href: "/works" },
-    { name: "contact", href: "/contact" },
-    // { name: "contact", href: "/#contact" },
+    // { name: "contact", href: "/contact" },
+    { name: "contact", href: "/#contact" },
   ];
 
 
@@ -206,6 +206,6 @@ export const projects = [
 export const socials = [
   { name: "Instagram", href: "https://www.instagram.com/ali.sanatidev/reels/" },
   { name: "LinkedIn", href: "https://www.linkedin.com/in/ali-sanati/" },
-  { name: "GitHub", href: "https://github.com/Ali-Sanati" },
-  { name: "X", href: "https://github.com/Ali-Sanati" },
+  { name: "GitHub", href: "https://github.com/Joseph-Ambakederimo" },
+  { name: "X", href: "https://x.com.com/Ebiowei1999" },
 ];

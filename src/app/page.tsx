@@ -11,6 +11,7 @@ import ScrollSection from "@/components/ScrollSection";
 import StickyContent from "@/components/StickyContent";
 import LenisProvider from "@/components/LenisProvider";
 import StickyCards from "@/components/sections/sticyCards/StickyCards";
+import Description from '@/components/Description/Description';
 import { Metadata } from "next";
 import { ReactLenis } from "lenis/react"
 
@@ -101,10 +102,12 @@ export default function Home() {
     // },
   ];
   return (
-    <div>
+    <div className="relativ w-screen min-h-screen ">
       <ReactLenis root />
       <Hero />
       {/* <section className="intro"></section> */}
+      <Description/>
+
       <StickyCards/>
       {/* <section className="outro"></section> */}
       <LenisProvider>

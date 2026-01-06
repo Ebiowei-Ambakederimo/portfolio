@@ -162,6 +162,16 @@ body {
   font-family: "Manrope", sans-serif;
 }
 
+/* Prevent horizontal swipe/overscroll shifting on mobile */
+html,
+body,
+#__next {
+  overflow-x: hidden;
+  overscroll-behavior-x: none;
+  touch-action: pan-y;
+  -webkit-overflow-scrolling: touch;
+}
+
 /* Ensure contact section extends to cover bottom white bar */
 #contact {
   position: relative;

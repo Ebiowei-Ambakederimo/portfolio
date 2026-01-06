@@ -275,7 +275,7 @@ img {
   object-fit: cover;
 }
 
-h4 {
+h5 {
   font-size: 7rem;
   font-weight: 800;
   letter-spacing: -0.35rem;
@@ -288,7 +288,7 @@ h4 {
 } */
 
 @media ( max-width: 1000px ){
-  h4 {
+  h5 {
     font-size: 2rem;
     letter-spacing: 0;
   }

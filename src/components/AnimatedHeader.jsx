@@ -73,23 +73,21 @@ const AnimatedHeader = ({
             <h1
               className={`flex flex-col gap-12 uppercase banner-text-responsive sm:gap-16 md:block ${textColor}`}
             >
-              {titleLetters.map((char, index) => (
-                <span
-                  key={index}
-                  ref={el => (letterRefs.current[index] = el)}
-                  style={{ display: "inline-block", marginRight: char === ' ' ? '0.5em' : undefined }}
-                >
-                  {char === ' ' ? '\u00A0' : char}
-                </span>
+              {titleParts.map((part, index) => (
+                <span key={index}>{part} </span>
               ))}
             </h1>
           </div>
         </div>
       </div>
       <div className={`relative px-10 ${textColor}`}>
-        <div className="absolute inset-x-0 " />
+        <div className="absolute inset-x-0" />
         <div className="py-12 sm:py-16 text-end">
-        <AnimatedTextLines
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <AnimatedTextLines
             text={text}
             className={`font-light value-text-responsive ${textColor}`}
             // className={`font-light uppercase value-text-responsive ${textColor}`}

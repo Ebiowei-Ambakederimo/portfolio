@@ -102,7 +102,7 @@ export default function Home() {
   //   // },
   // ];
   return (
-    <div className="relativ w-screen min-h-screen ">
+    <div className="flex flex-col justify-end min-h-screen ">
       <ReactLenis root />
       <Hero />
       {/* <section className="intro"></section> */}

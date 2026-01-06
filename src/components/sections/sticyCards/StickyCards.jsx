@@ -6,7 +6,9 @@ import {  useRef } from "react";
 import Image from "next/image";
 
 import gsap from "gsap";
-import AnimatedHeaderSection from "@/components/AnimatedHeaderSection";
+// import AnimatedHeaderSection from "@/components/AnimatedHeaderSection";
+import AnimatedHeader from "@/components/AnimatedHeader";
+
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 
@@ -121,21 +123,15 @@ const StickyCards = () => {
 
     return (
         <div className="sticky-cards" ref={container}>
-                  <AnimatedHeaderSection
-                    subTitle={"Selected Projects"}
-                    title={"Projects"}
-                    text={text}
-                    textColor={"text-black text-3xl"}
-                    withScrollTrigger={true}
-                  />
+
             {stickyCardsData.map((cardData, index) => (
                 <div className="sticky-card" key={index}>
                     <div className="sticky-card-index">
-                        <h4>{cardData.index}</h4>
+                        <h5>{cardData.index}</h5>
                     </div>
                     <div className="sticky-card-content">
                         <div className="sticky-card-content-wrapper">
-                            <h4 className="sticky-card-header">{cardData.title}</h4>
+                            <h5 className="sticky-card-header">{cardData.title}</h5>
                             <div className="sticky-card-img">
                                 <Image 
                                     src={cardData.imageSrc} 

@@ -14,18 +14,20 @@ export default function Description() {
         <div ref={description} className={styles.description}>
             <div className={styles.body}>
                 <p>
-                {
-                    phrase.split(" ").map( (word, index) => {
-                        return <span key={index} className={styles.mask}><span variants={slideUp} custom={index} animate={isInView ? "open" : "closed"} key={index}>{word}</span></span>
-                    })
-                }
-                </p>
-                {/* <p variants={opacity} animate={isInView ? "open" : "closed"}>The combination of my passion for design, code & interaction positions me in a unique place in the web design world.</p>
-                <div data-scroll data-scroll-speed={0.1}>
-                    <Rounded className={styles.button}>
-                        <p>About me</p>
-                    </Rounded>
-                </div> */}
+  {phrase.split(" ").map((word, index) => {
+    return (
+      <span key={`mask-${index}`} className={styles.mask}>
+        <span 
+          variants={slideUp} 
+          custom={index} 
+          animate={isInView ? "open" : "closed"}
+        >
+          {word}
+        </span>
+      </span>
+    )
+  })}
+</p>
             </div>
         </div>
     )

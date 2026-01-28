@@ -15,8 +15,8 @@ const Hero = () => {
   return (
     <section id="home" className="relative  min-h-[90vh]">
       <AnimatedHeaderSection
-        subTitle={"full-stack dev"}
-        title={"Joseph"}
+        subTitle={"software dev"}
+        title={"Ebiowei"}
         text={text}
         textColor={"text-black"}
       />

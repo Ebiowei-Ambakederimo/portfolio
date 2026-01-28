@@ -1,7 +1,7 @@
 import { MetadataRoute } from "next";
 
 export default function robots(): MetadataRoute.Robots {
-    const baseUrl = "";
+    const baseUrl = "https://portfolio-ilui.vercel.app";
 
     return {
         rules: [

@@ -2,14 +2,16 @@
 
 import { Metadata } from 'next';
 import React from 'react';
+import { siteUrl } from "@/lib/site";
 // import { navItems } from "@/constants";
 // import Link from 'next/link';
 // import { usePathname } from "next/navigation";
 
 export const metadata: Metadata = {
-  title: "",
-  description: "",
+  title: "About | Your Name or Studio – Designer & Developer Portfolio",
+  description: "Learn about my design and development experience, tools, and approach to building intuitive digital experiences.",
   keywords: "",
+  alternates: { canonical: `${siteUrl}/about` },
   openGraph: {
     title: "",
     description: "",

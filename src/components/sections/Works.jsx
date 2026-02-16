@@ -111,6 +111,7 @@ const Works = () => {
         text={text}
         textColor={"text-black"}
         withScrollTrigger={true}
+        headingLevel="h2"
       />
       <div
         className="relative flex flex-col font-light"

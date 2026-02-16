@@ -13,7 +13,9 @@ const AnimatedHeaderSection = ({
   text,
   textColor,
   withScrollTrigger = false,
+  headingLevel = "h1",
 }) => {
+  const HeadingTag = headingLevel === "h2" ? "h2" : "h1";
   const contextRef = useRef(null);
   const headerRef = useRef(null);
   const shouldSplitTitle = title.includes(" ");
@@ -45,7 +47,7 @@ const AnimatedHeaderSection = ({
   }, []);
   return (
     <div ref={contextRef}>
-      <div style={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)" }}>
+      <div className="clip-path-rect">
         <div
           ref={headerRef}
           className="flex flex-col justify-center gap-12 pt-16 sm:gap-16"
@@ -56,13 +58,13 @@ const AnimatedHeaderSection = ({
             {subTitle}
           </p>
           <div className="px-10">
-            <h1
+            <HeadingTag
               className={`flex flex-col gap-12 uppercase banner-text-responsive sm:gap-16 md:block ${textColor}`}
             >
               {titleParts.map((part, index) => (
                 <span key={index}>{part} </span>
               ))}
-            </h1>
+            </HeadingTag>
           </div>
         </div>
       </div>

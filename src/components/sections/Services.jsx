@@ -42,6 +42,7 @@ const Services = () => {
         text={text}
         textColor={"text-black text-3xl"}
         withScrollTrigger={true}
+        headingLevel="h2"
       />
       {servicesData.map((service, index) => (
         <div

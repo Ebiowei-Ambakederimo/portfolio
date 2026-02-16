@@ -1,29 +1,29 @@
 import { MetadataRoute } from "next";
+import { siteUrl } from "@/lib/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-    const baseUrl = "https://portfolio-ilui.vercel.app";
     return [
-        {url: baseUrl, lastModified: new Date(), changeFrequency: "weekly", priority: 1},
+        {url: siteUrl, lastModified: new Date(), changeFrequency: "weekly", priority: 1},
         {
-            url: `${baseUrl}/`,
+            url: `${siteUrl}/`,
             lastModified: new Date(),
             changeFrequency: "monthly",
             priority: 0.8,
         },
         {
-            url: `${baseUrl}/about`,
+            url: `${siteUrl}/about`,
             lastModified: new Date(),
             changeFrequency: "monthly",
             priority: 0.8,
         },
         {
-            url: `${baseUrl}/contact`,
+            url: `${siteUrl}/contact`,
             lastModified: new Date(),
             changeFrequency: "monthly",
             priority: 0.7,
         },
         {
-            url: `${baseUrl}/works`,
+            url: `${siteUrl}/works`,
             lastModified: new Date(),
             changeFrequency: "monthly",
             priority: 0.9,

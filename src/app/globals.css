@@ -88,6 +88,24 @@
     clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
   }
 
+  /* Full rect clip-path for AnimatedHeader / AnimatedHeaderSection (replaces inline style) */
+  .clip-path-rect {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+
+  /* Navbar: initial state hidden until GSAP runs */
+  .nav-initial {
+    visibility: hidden;
+  }
+
+  /* Burger button clip-path states (replaces inline style) */
+  .burger-clip-visible {
+    clip-path: circle(50% at 50% 50%);
+  }
+  .burger-clip-hidden {
+    clip-path: circle(0% at 50% 50%);
+  }
+
  /* .banner-text-responsive {
   @apply text-[68px] sm:text-[118px] md:text-[126px] lg:text-[152px] leading-[3rem] sm:leading-[4.5rem] lg:leading-[5rem];
 } */

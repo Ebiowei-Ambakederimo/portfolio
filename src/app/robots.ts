@@ -1,8 +1,7 @@
 import { MetadataRoute } from "next";
+import { siteUrl } from "@/lib/site";
 
 export default function robots(): MetadataRoute.Robots {
-    const baseUrl = "https://portfolio-ilui.vercel.app";
-
     return {
         rules: [
             {
@@ -16,6 +15,6 @@ export default function robots(): MetadataRoute.Robots {
             disallow: [""],
         },
     ],
-    sitemap: `${baseUrl}/sitemap.xml`,
+    sitemap: `${siteUrl}/sitemap.xml`,
     };
 }

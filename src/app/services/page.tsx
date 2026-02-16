@@ -1,9 +1,11 @@
 import { Metadata } from "next";
+import { siteUrl } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "services | Your Name or Studio",
+  title: "Services | Your Name or Studio – Web Development & Design Services",
   description: "See featured full-stack, SaaS, and AI-driven projects built by a frontend-focused full-stack developer using Next.js, Tailwind CSS, and GSAP.",
   keywords: "",
+  alternates: { canonical: `${siteUrl}/services` },
   openGraph: {
     title: "",
     description: "",

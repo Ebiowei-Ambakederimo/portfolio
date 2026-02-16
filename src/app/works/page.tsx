@@ -1,5 +1,6 @@
 import Works from "@/components/sections/Works";
 import { Metadata } from "next";
+import { siteUrl } from "@/lib/site";
 
 // export const metadata = {
 //   title: "Projects | Your Name or Studio",
@@ -8,9 +9,10 @@ import { Metadata } from "next";
 // };
 
 export const metadata: Metadata = {
-  title: "projects | Your Name or Studio",
+  title: "Projects | Your Name or Studio – Web & App Development Portfolio",
   description: "See featured full-stack, SaaS, and AI-driven projects built by a frontend-focused full-stack developer using Next.js, Tailwind CSS, and GSAP.",
   keywords: "",
+  alternates: { canonical: `${siteUrl}/works` },
   openGraph: {
     title: "",
     description: "",

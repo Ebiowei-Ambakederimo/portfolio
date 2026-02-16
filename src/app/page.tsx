@@ -13,12 +13,14 @@ import ScrollVelocity from "@/components/ScrollVelocity";
 import StickyCards from "@/components/sections/sticyCards/StickyCards";
 import Description from '@/components/Description/Description';
 import { Metadata } from "next";
-import { ReactLenis } from "lenis/react"
+import { ReactLenis } from "lenis/react";
+import { siteUrl } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "home | Your Name or Studio",
+  title: "Home | Your Name or Studio – Full-Stack Developer & Designer Portfolio",
   description: "See featured full-stack, SaaS, and AI-driven projects built by a frontend-focused full-stack developer using Next.js, Tailwind CSS, and GSAP.",
   keywords: "",
+  alternates: { canonical: `${siteUrl}/` },
   openGraph: {
     title: "",
     description: "",

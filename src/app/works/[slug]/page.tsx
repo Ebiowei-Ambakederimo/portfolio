@@ -2,6 +2,8 @@
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import { projects } from "@/constants";
+import { siteUrl } from "@/lib/site";
+import type { Metadata } from "next";
 // import { useGSAP } from "@gsap/react";
 
 export async function generateStaticParams() {
@@ -10,10 +12,17 @@ export async function generateStaticParams() {
   }));
 }
 
-export const metadata = {
-  title: "Project | Portfolio",
-  description: "Detailed case study",
-};
+type Props = { params: Promise<{ slug: string }> };
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { slug } = await params;
+  const project = projects.find((p) => p.slug === slug);
+  return {
+    title: project ? `${project.name} | Your Name or Studio – Project Case Study` : "Project | Your Name or Studio – Portfolio Case Study",
+    description: "Detailed case study",
+    alternates: { canonical: `${siteUrl}/works/${slug}` },
+  };
+}
 
 export default async function ProjectPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params; // Await params before destructuring

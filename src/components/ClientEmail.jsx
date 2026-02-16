@@ -95,7 +95,6 @@
 
 
 
-
 "use client";
 
 import { useEffect, useState } from "react";
@@ -110,45 +109,29 @@ export default function ClientEmail({
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    const contactEmail = getContactEmail();
-    setEmail(contactEmail);
+    setEmail(getContactEmail());
     setIsMobile(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent));
   }, []);
-
-  const handleClick = (e) => {
-    if (!email) return;
-    
-    if (isMobile) {
-      e.preventDefault();
-      
-      const gmailAppUrl = `googlegmail://co?to=${email}`;
-      const gmailWebUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${email}`;
-      
-      // Try to open app
-      const appOpened = window.open(gmailAppUrl, '_self');
-      
-      // Fallback to web if app doesn't respond
-      setTimeout(() => {
-        if (!document.hidden) {
-          window.location.href = gmailWebUrl;
-        }
-      }, 1500);
-    }
-  };
 
   if (!email) {
     return loadingText ? <span className={className}>{loadingText}</span> : null;
   }
 
   if (asLink) {
-    const gmailWebUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${email}`;
+    if (isMobile) {
+      return (
+        <a href={`mailto:${email}`} className={className}>
+          {email}
+        </a>
+      );
+    }
     
+    const gmailWebUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${email}`;
     return (
       <a
         href={gmailWebUrl}
-        target={isMobile ? "_self" : "_blank"}
-        rel={isMobile ? undefined : "noopener noreferrer"}
-        onClick={handleClick}
+        target="_blank"
+        rel="noopener noreferrer"
         className={className}
       >
         {email}
